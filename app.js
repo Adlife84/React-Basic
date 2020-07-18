@@ -18,11 +18,11 @@ let playersData = [
 ];
 
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <h1>Scoreboard</h1>
-            <span className="stats">Players: 1</span>
+            <h1>{props.title}</h1>
+            <span className="stats">Players: {props.totalPlayers}</span>
         </header>
 
     );
@@ -54,7 +54,9 @@ const Player = (props) => {
 const App = (props) => {
     return (
         <div className="scoreboard">
-            <Header counterPlayers={props.initialPlayers} />
+            <Header 
+                title="Scoreboard"
+                totalPlayers={props.initialPlayers.length} />
 
             {/* Players list  */}
             {props.initialPlayers.map( player => 

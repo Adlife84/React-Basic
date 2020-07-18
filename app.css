@@ -226,6 +226,10 @@ svg {
     color: #fff;
   }
 
+  .player-name:hover {
+    background:#F0F0F0;
+  }
+
   .increment:hover {
     background: #83D97C;
   }
