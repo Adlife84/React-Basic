@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 
+
 class App extends Component {
 
     state = {
@@ -12,19 +13,29 @@ class App extends Component {
                 id: 1
               },
               {
-                name: "Treasure",
+                name: "Marta",
                 score: 0,
                 id: 2
               },
               {
-                name: "Ashley",
+                name: "Alex",
                 score: 0,
                 id: 3
               },
               {
-                name: "James",
+                name: "Treasure",
                 score: 0,
                 id: 4
+              },
+              {
+                name: "Ashley",
+                score: 0,
+                id: 5
+              },
+              {
+                name: "James",
+                score: 0,
+                id: 6
               }
         ]
     };
@@ -48,9 +59,11 @@ class App extends Component {
     render() {
         return (
             <div className="scoreboard">
+                
                 <Header 
                     title="Scoreboard"
-                    totalPlayers={this.state.players.length} />
+                    players={this.state.players}
+                     />
     
                 {/* Players list  */}
                 {this.state.players.map( (player, index) => 
