@@ -41,6 +41,20 @@ class App extends Component {
         ]
     };
 
+    idPlayer = this.state.players.length;
+
+    handleAddPlayer = (name) => {
+        let newPlayer = {
+            name: name,
+            score: 0,
+            id: this.idPlayer += 1
+        };
+
+        this.setState( prevState => ({
+            players: prevState.players.concat(newPlayer)
+        }));
+    }
+
     handleScoreChange = (index, delta) => {
         this.setState(prevState => ({
             score: prevState.players[index].score += delta
@@ -79,7 +93,7 @@ class App extends Component {
                     changeScore={this.handleScoreChange}
                     />
                 )}
-                <AddPlayerForm />
+                <AddPlayerForm addPlayer={this.handleAddPlayer} />
             </div>
     
         );
