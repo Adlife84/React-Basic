@@ -27,16 +27,6 @@ class App extends Component {
                 name: "Treasure",
                 score: 0,
                 id: 4
-              },
-              {
-                name: "Ashley",
-                score: 0,
-                id: 5
-              },
-              {
-                name: "James",
-                score: 0,
-                id: 6
               }
         ]
     };
