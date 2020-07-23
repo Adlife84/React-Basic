@@ -34,22 +34,26 @@ class App extends Component {
     idPlayer = this.state.players.length;
 
     handleAddPlayer = (name) => {
-        let newPlayer = {
-            name: name,
-            score: 0,
-            id: this.idPlayer += 1
-        };
-
-        this.setState( prevState => ({
-            players: prevState.players.concat(newPlayer)
-        }));
+        if(name === ''){
+            console.log('empty')
+        } else {
+            let newPlayer = {
+                name: name,
+                score: 0,
+                id: this.idPlayer += 1
+            };
+    
+            this.setState( prevState => ({
+                players: prevState.players.concat(newPlayer)
+            }));
+        }
     }
 
     handleScoreChange = (index, delta) => {
         this.setState(prevState => ({
             score: prevState.players[index].score += delta
         }));
-        console.log('Index: ' + index, 'Delta: ' + delta);
+        // console.log('Index: ' + index, 'Delta: ' + delta); //Check the index of player
     }
 
     handleRemovePlayer = (id) => {

@@ -1,30 +1,13 @@
 import React from 'react';
 
 
-const Counter = (props) => {
-
-    // state = {
-    //     score: 0
-    // };
-
-   
-
-    // decrementScore() {
-    //     // console.log('Hi from inside decremaasdentScore!');
-    //     this.setState(prevState => ({
-    //         score: prevState.score - 1
-    //     }));
-    // }
-
-    let index = props.index
-
-
+const Counter = ({index, score, changeScore}) => {
 
     return (
         <div className="counter">
-            <button className="counter-action decrement" onClick={ () => props.changeScore(index, -1) }> - </button>
-            <span className="counter-score">{props.score}</span>
-            <button className="counter-action decrement" onClick={ () => props.changeScore(index, 1) } > + </button>
+            <button className="counter-action decrement" onClick={ () => changeScore(index, -1) }> - </button>
+            <span className="counter-score">{score}</span>
+            <button className="counter-action decrement" onClick={ () => changeScore(index, 1) } > + </button>
         </div>
     );
 

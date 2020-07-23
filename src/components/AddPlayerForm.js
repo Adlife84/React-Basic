@@ -16,7 +16,7 @@ class AddPlayerForm extends Component {
     }
 
     render() {
-        console.log(this.state.value);
+        
         return(
             <form onSubmit={this.handleSubmit}>
                 <input 
@@ -37,3 +37,32 @@ class AddPlayerForm extends Component {
 }
 
 export default AddPlayerForm;
+
+
+
+// Use refs inside a functional component:
+
+// const AddPlayerForm = ({ addPlayer }) => {
+
+//   let playerInput = React.createRef();
+//   let handleSubmit = (e) => {
+//     e.preventDefault();
+//     addPlayer(playerInput.current.value);
+//     e.currentTarget.reset();
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input 
+//         type="text" 
+//         ref={playerInput}
+//         placeholder="Enter a player's name"
+//       />
+
+//       <input 
+//         type="submit" 
+//         value="Add Player" 
+//       />
+//     </form>
+//   ); 
+// }
