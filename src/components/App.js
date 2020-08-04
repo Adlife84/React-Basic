@@ -87,6 +87,7 @@ class App extends Component {
                     changeScore={this.handleScoreChange}
                     />
                 )}
+                
                 <AddPlayerForm addPlayer={this.handleAddPlayer} />
             </div>
     
