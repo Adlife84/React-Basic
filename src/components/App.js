@@ -12,29 +12,29 @@ class App extends Component {
                 name: "Andrei",
                 score: 0,
                 id: 1
-              },
-              {
+            },
+            {
                 name: "Marta",
                 score: 0,
                 id: 2
-              },
-              {
+            },
+            {
                 name: "Alex",
                 score: 0,
                 id: 3
-              },
-              {
+            },
+            {
                 name: "Treasure",
                 score: 0,
                 id: 4
-              }
+            }
         ]
     };
 
     idPlayer = this.state.players.length;
 
     handleAddPlayer = (name) => {
-        if(name === ''){
+        if (name === '') {
             console.log('empty')
         } else {
             let newPlayer = {
@@ -42,8 +42,8 @@ class App extends Component {
                 score: 0,
                 id: this.idPlayer += 1
             };
-    
-            this.setState( prevState => ({
+
+            this.setState(prevState => ({
                 players: prevState.players.concat(newPlayer)
             }));
         }
@@ -57,43 +57,43 @@ class App extends Component {
     }
 
     handleRemovePlayer = (id) => {
-        this.setState( prevState => {
+        this.setState(prevState => {
             return {
-                players: prevState.players.filter( p => p.id !== id )
+                players: prevState.players.filter(p => p.id !== id)
             };
-            
+
         });
     }
 
     render() {
         return (
             <div className="scoreboard">
-                
-                <Header 
+
+                <Header
                     title="Scoreboard"
                     players={this.state.players}
-                     />
-    
+                />
+
                 {/* Players list  */}
-                {this.state.players.map( (player, index) => 
-    
-                <Player 
-                    score={player.score}
-                    id={player.id}
-                    index={index}
-                    name={player.name} 
-                    key={player.id.toString()}
-                    removePlayer={this.handleRemovePlayer}
-                    changeScore={this.handleScoreChange}
+                {this.state.players.map((player, index) =>
+
+                    <Player
+                        score={player.score}
+                        id={player.id}
+                        index={index}
+                        name={player.name}
+                        key={player.id.toString()}
+                        removePlayer={this.handleRemovePlayer}
+                        changeScore={this.handleScoreChange}
                     />
                 )}
-                
+
                 <AddPlayerForm addPlayer={this.handleAddPlayer} />
             </div>
-    
+
         );
     }
-    
+
 }
 
 export default App;
